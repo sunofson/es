@@ -16,6 +16,7 @@
 
     <build>
         <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -142,6 +143,7 @@
             <!--</plugin>-->
 
         </plugins>
+        </pluginManagement>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -225,13 +227,13 @@
                 <db.name>es</db.name>
                 <connection.driver_class>com.mysql.jdbc.Driver</connection.driver_class>
                 <connection.admin.url>
-                    <![CDATA[jdbc:mysql://localhost:3306?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8]]>
+                    <![CDATA[jdbc:mysql://localhost:3306/es?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8mb4]]>
                 </connection.admin.url>
                 <connection.url>
                     <![CDATA[jdbc:mysql://localhost:3306/${db.name}?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8]]>
                 </connection.url>
                 <connection.username>root</connection.username>
-                <connection.password/>
+                <connection.password>tiger</connection.password>
                 <jpa.showSql>true</jpa.showSql>
                 <jpa.generateDdl>false</jpa.generateDdl>
                 <jpa.database>MYSQL</jpa.database>
@@ -243,8 +245,8 @@
 
             </properties>
         </profile>
-        <profile>
-            <!-- integration test -->
+        <!-- <profile>
+            integration test
             <id>it</id>
             <properties>
                 <db.name>es</db.name>
@@ -268,10 +270,10 @@
 
 
             </properties>
-        </profile>
+        </profile> -->
 
-        <profile>
-            <!--正式环境-->
+        <!-- <profile>
+            正式环境
             <id>production</id>
             <properties>
                 <db.name>es</db.name>
@@ -294,7 +296,7 @@
                 <shiro.uid.cookie.path>/</shiro.uid.cookie.path>
 
             </properties>
-        </profile>
+        </profile> -->
 
     </profiles>
 
