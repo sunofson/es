@@ -24,6 +24,7 @@
                 <version>${jetty.version}</version>
                 <configuration>
                     <reload>manual</reload>
+                    <jvmArgs>-Xmx1024m -Xms1024m</jvmArgs>
                     <!--<scanIntervalSeconds>2</scanIntervalSeconds>-->
                     <stopPort>9999</stopPort>
                     <webAppConfig>
